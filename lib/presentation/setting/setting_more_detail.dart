@@ -1,28 +1,20 @@
-import 'package:app_rputer/router/app_router.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @RoutePage()
-class SettingPage extends HookConsumerWidget {
-  const SettingPage({super.key});
-
+class SettingMoreDetailPage extends HookConsumerWidget {
+  const SettingMoreDetailPage({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    useEffect(() {
-      print('SettingPage');
-    }
-    , const []);
-
     return Scaffold(
       body: Container(
         child: Center(
           child: ElevatedButton(
             onPressed: () {
-              context.router.push(const ProfileRoute());
+              context.router.popUntil((route) => route.isFirst);
             },
-            child: const Text('Profile'),
+            child: const Text('Setting More Detail'),
           ),
         ),
       )

@@ -9,17 +9,23 @@ class TabPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              context.router.push(SettingRoute());
-            },
-            child: const Text('Setting'),
-          ),
-        ),
-      )
-    );
+    return AutoTabsScaffold(      
+      routes: const [      
+        HomeRoute(),      
+        ProfileRoute(),      
+        SettingAutoRouterRoute(),      
+      ],      
+      bottomNavigationBuilder: (_, tabsRouter) {      
+        return BottomNavigationBar(      
+          currentIndex: tabsRouter.activeIndex,      
+          onTap: tabsRouter.setActiveIndex,      
+          items: const [      
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home',), 
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile',),
+            BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting',),
+          ],      
+        );      
+      },      
+    );      
   }
 }
