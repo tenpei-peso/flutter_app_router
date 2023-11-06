@@ -1,5 +1,6 @@
 ディレクトリ
 
+```
 ├── presentation
 │   ├── home
 │   │   └── home_page.dart
@@ -16,3 +17,4 @@
 │   └── app_router.gr.dart
 ├── app.dart
 └── main.dart
+```
