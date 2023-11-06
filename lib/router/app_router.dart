@@ -1,4 +1,5 @@
 import 'package:app_rputer/presentation/home/home_page.dart';
+import 'package:app_rputer/presentation/no_navigator_page.dart';
 import 'package:app_rputer/presentation/profile/profile_page.dart';
 import 'package:app_rputer/presentation/setting/setting_detail.dart';
 import 'package:app_rputer/presentation/setting/setting_more_detail.dart';
@@ -47,6 +48,7 @@ class AppRouter extends _$AppRouter {
           ]
         ),
       ],
-      ),      
+      ),
+      AutoRoute(page: NoNavigatorRoute.page,) 
   ];
 }
